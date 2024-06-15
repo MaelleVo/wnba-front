@@ -7,7 +7,7 @@ dotenv.config();
 const Home = () => {
   const [equipes, setEquipes] = useState([]);
 
-  const api_key = process.env.REACT_APP_SPORTRADAR_API_KEY;
+  const api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     const fetchEquipes = async () => {
