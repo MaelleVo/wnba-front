@@ -1,5 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import dotenv from "dotenv";
+dotenv.config();
 
 // PAGES
 import Home from "./assets/pages/Home";
