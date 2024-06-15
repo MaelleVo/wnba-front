@@ -1,17 +1,16 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import dotenv from "dotenv";
 
 dotenv.config(); // Charge les variables d'environnement depuis .env
 
-// Obtient la valeur de l'API_KEY depuis les variables d'environnement
-const api_key = process.env.API_KEY || "";
-
-// Configuration de Vite
-export default defineConfig({
-  plugins: [react()],
-  include: ["axios"],
-  define: {
-    "process.env.API_KEY": JSON.stringify(api_key),
-  },
+// https://vitejs.dev/config/
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), "");
+  return {
+    define: {
+      "process.env.api_key": JSON.stringify(env.api_key),
+    },
+    plugins: [react()],
+  };
 });
