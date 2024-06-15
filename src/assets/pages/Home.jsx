@@ -32,7 +32,7 @@ const Home = () => {
     };
 
     fetchEquipes();
-  }, [apiKey]);
+  }, []);
 
   return (
     <div>
