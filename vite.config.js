@@ -10,6 +10,7 @@ const api_key = process.env.API_KEY || "";
 // Configuration de Vite
 export default defineConfig({
   plugins: [react()],
+  include: ["axios"],
   define: {
     "process.env.API_KEY": JSON.stringify(api_key),
   },
