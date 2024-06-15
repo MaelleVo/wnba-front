@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd());
   return {
     define: {
-      "process.env.REACT_APP_API_KEY": JSON.stringify(env.api_key),
+      "process.env.REACT_APP_SOME_KEY": JSON.stringify(env.api_key),
     },
     optimizeDeps: {
       include: ["axios"], // Ajoutez les dépendances que vous utilisez
