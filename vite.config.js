@@ -11,6 +11,9 @@ export default defineConfig(({ mode }) => {
     define: {
       "process.env.api_key": JSON.stringify(env.api_key),
     },
+    optimizeDeps: {
+      include: ["axios"], // Ajoutez les dépendances que vous utilisez
+    },
     plugins: [react()],
   };
 });
