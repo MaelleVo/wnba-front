@@ -7,6 +7,8 @@ dotenv.config();
 const Home = () => {
   const [equipes, setEquipes] = useState([]);
 
+  const apiKey = process.env.REACT_APP_SPORTRADAR_API_KEY;
+
   useEffect(() => {
     const fetchEquipes = async () => {
       try {
@@ -16,7 +18,7 @@ const Home = () => {
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json",
-              "Api-Key": process.env.REACT_APP_SPORTRADAR_API_KEY,
+              "Api-Key": apiKey,
             },
           }
         );
