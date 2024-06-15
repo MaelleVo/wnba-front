@@ -7,7 +7,7 @@ dotenv.config();
 const Home = () => {
   const [equipes, setEquipes] = useState([]);
 
-  // const apiKey = process.env.REACT_APP_SPORTRADAR_API_KEY;
+  const api_key = process.env.REACT_APP_SPORTRADAR_API_KEY;
 
   useEffect(() => {
     const fetchEquipes = async () => {
@@ -16,9 +16,7 @@ const Home = () => {
           "http://api.sportradar.com/wnba/trial/v8/en/league/teams.json",
           {
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              "Api-Key": process.env.REACT_APP_SPORTRADAR_API_KEY,
+              Authorization: `Bearer ${api_key}`,
             },
           }
         );
@@ -32,7 +30,7 @@ const Home = () => {
     };
 
     fetchEquipes();
-  }, []);
+  }, [api_key]);
 
   return (
     <div>
