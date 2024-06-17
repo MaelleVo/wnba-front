@@ -11,18 +11,20 @@ import Header from "./assets/components/Header";
 
 import "./App.css";
 
-function App() {
+const App = () => {
+  const api_key = process.env.REACT_APP_API_KEY;
+
   return (
     <>
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home api_key={api_key} />} />
           <Route path="*" element={<p>Error 404 : Can't find this page. </p>} />
         </Routes>
       </Router>
     </>
   );
-}
+};
 
 export default App;

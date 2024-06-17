@@ -4,10 +4,10 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const Home = () => {
+const Home = ({ api_key }) => {
   const [equipes, setEquipes] = useState([]);
 
-  const api_key = process.env.REACT_APP_API_KEY;
+  // const api_key = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     const fetchEquipes = async () => {
